@@ -1,0 +1,89 @@
+* {
+	margin: 0px;
+	padding: 0px;
+	border: none;
+	box-sizing: border-box;
+}
+
+html {
+	font-family: arial;
+}
+
+body {
+	min-width: 900px;
+	background-color: #f0f0f0;
+}
+
+a {
+	text-decoration: none;
+}
+
+.cover {
+	margin: 100px auto;
+	display: table;
+	background-color: #fff;
+}
+
+.input {
+	padding: 15px 20px;
+	border-bottom: 2px solid #f0f0f0;
+}
+
+.input input {
+	padding: 0px 10px;
+	width: 100%;
+	font-size: 20px;
+	line-height: 40px;
+	color: #404040;
+	outline: none;
+}
+
+.keypadTypes {
+	padding: 40px;
+	display: inline-block;
+	vertical-align: top;
+}
+
+.type {
+	margin: 10px 0px;
+	padding: 10px;
+	width: 100px;
+	display: block;
+	text-align: center;
+	font-size: 14px;
+	color: #404040;
+	border: 1px solid #d0d0d0;
+	border-radius: 3px;
+}
+
+.keypadCover {
+	padding: 40px;
+	display: inline-block;
+	border-left: 2px solid #f0f0f0;
+	vertical-align: top;
+}
+
+.keyRow {
+	margin: 0px auto;
+	display: table;
+}
+
+.key {
+	margin: 5px;
+	display: inline-block;
+	text-align: center;
+	font-size: 16px;
+	line-height: 60px;
+	color: #404040;
+	border: 1px solid #d0d0d0;
+	border-radius: 3px;
+}
+
+.regularKey {
+	width: 50px;
+}
+
+.typeSelected, .keySelected {
+	color: #202020;
+	background-color: #d0d0d0;
+}
