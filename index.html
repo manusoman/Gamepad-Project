@@ -11,25 +11,75 @@
    <div class="cover">
       <section class="input"><input id="inputBox" autofocus type="text" placeholder="Enter Text..."></section>
       <section class="keypad">
+          
            <section class="keypadTypes">
-               <a href="" class="type typeSelected">ABC</a>
-               <a href="" class="type">!?123</a>
-           </section><section id="alphaKeypad" class="keypadCover">
+               <a href="" id="abc" class="type typeLeft typeSelected">abc,.</a><a href="" id="ABC" class="type">ABC,.</a><a href="" id="num" class="type typeRight">!?123</a>
+           </section>
+           
+            <section id="alphaLow" class="keypadCover activeKeypad">
                <div class="keyRow">
-                   <a href="" class="key regularKey">Q</a><a href="" class="key regularKey">W</a><a href="" class="key regularKey">E</a><a href="" class="key regularKey">R</a><a href="" class="key regularKey">T</a><a href="" class="key regularKey">Y</a><a href="" class="key regularKey">U</a><a href="" class="key regularKey">I</a><a href="" class="key regularKey">O</a><a href="" class="key regularKey">P</a>
+                  
+                  <input class="key regularKey" type="button" value="q"><input class="key regularKey" type="button" value="w"><input class="key regularKey" type="button" value="e"><input class="key regularKey" type="button" value="r"><input class="key regularKey" type="button" value="t"><input class="key regularKey" type="button" value="y"><input class="key regularKey" type="button" value="u"><input class="key regularKey" type="button" value="i"><input class="key regularKey" type="button" value="o"><input class="key regularKey" type="button" value="p">
+                  
                </div>
                 <div class="keyRow">
-                   <a href="" class="key regularKey">A</a><a href="" class="key regularKey">S</a><a href="" class="key regularKey">D</a><a href="" class="key regularKey">F</a><a href="" class="key regularKey keySelected">G</a><a href="" class="key regularKey">H</a><a href="" class="key regularKey">J</a><a href="" class="key regularKey">K</a><a href="" class="key regularKey">L</a>
+                  
+                  <input class="key regularKey" type="button" value="a"><input class="key regularKey" type="button" value="s"><input class="key regularKey" type="button" value="d"><input class="key regularKey" type="button" value="f"><input class="key regularKey keySelected" type="button" value="g"><input class="key regularKey" type="button" value="h"><input class="key regularKey" type="button" value="j"><input class="key regularKey" type="button" value="k"><input class="key regularKey" type="button" value="l">
+                    
                </div>
                 <div class="keyRow">
-                   <a href="" class="key regularKey">Z</a><a href="" class="key regularKey">X</a><a href="" class="key regularKey">C</a><a href="" class="key regularKey">V</a><a href="" class="key regularKey">B</a><a href="" class="key regularKey">N</a><a href="" class="key regularKey">M</a>
+                  
+                  <input class="key regularKey" type="button" value="z"><input class="key regularKey" type="button" value="x"><input class="key regularKey" type="button" value="c"><input class="key regularKey" type="button" value="v"><input class="key regularKey" type="button" value="b"><input class="key regularKey" type="button" value="n"><input class="key regularKey" type="button" value="m"><input class="key regularKey" type="button" value=","><input class="key regularKey" type="button" value=".">
+                    
                </div>
            </section>
+              
+            <section id="alphaUpr" class="keypadCover">
+               <div class="keyRow">
+                  
+                  <input class="key regularKey" type="button" value="Q"><input class="key regularKey" type="button" value="W"><input class="key regularKey" type="button" value="E"><input class="key regularKey" type="button" value="R"><input class="key regularKey" type="button" value="T"><input class="key regularKey" type="button" value="Y"><input class="key regularKey" type="button" value="U"><input class="key regularKey" type="button" value="I"><input class="key regularKey" type="button" value="O"><input class="key regularKey" type="button" value="P">
+                  
+               </div>
+                <div class="keyRow">
+                  
+                  <input class="key regularKey" type="button" value="A"><input class="key regularKey" type="button" value="S"><input class="key regularKey" type="button" value="D"><input class="key regularKey" type="button" value="F"><input class="key regularKey keySelected" type="button" value="G"><input class="key regularKey" type="button" value="H"><input class="key regularKey" type="button" value="J"><input class="key regularKey" type="button" value="K"><input class="key regularKey" type="button" value="L">
+                    
+               </div>
+                <div class="keyRow">
+                  
+                  <input class="key regularKey" type="button" value="Z"><input class="key regularKey" type="button" value="X"><input class="key regularKey" type="button" value="C"><input class="key regularKey" type="button" value="V"><input class="key regularKey" type="button" value="B"><input class="key regularKey" type="button" value="N"><input class="key regularKey" type="button" value="M"><input class="key regularKey" type="button" value=","><input class="key regularKey" type="button" value=".">
+                    
+               </div>
+           </section>
+           
+            <section id="numNSymbol" class="keypadCover">
+               <div class="keyRow">
+                  
+                  <input class="key regularKey" type="button" value="!"><input class="key regularKey" type="button" value="@"><input class="key regularKey" type="button" value="#"><input class="key regularKey" type="button" value="$"><input class="key regularKey" type="button" value="%"><input class="key regularKey" type="button" value="^"><input class="key regularKey" type="button" value="&"><input class="key regularKey" type="button" value="*"><input class="key regularKey" type="button" value="("><input class="key regularKey" type="button" value=")">
+                   
+               </div>
+                <div class="keyRow">
+                  
+                  <input class="key regularKey" type="button" value="1"><input class="key regularKey" type="button" value="2"><input class="key regularKey" type="button" value="3"><input class="key regularKey" type="button" value="4"><input class="key regularKey keySelected" type="button" value="5"><input class="key regularKey" type="button" value="6"><input class="key regularKey" type="button" value="7"><input class="key regularKey" type="button" value="8"><input class="key regularKey" type="button" value="9"><input class="key regularKey" type="button" value="0">
+                    
+               </div>
+                <div class="keyRow">
+                  
+                  <input class="key regularKey" type="button" value="`"><input class="key regularKey" type="button" value="~"><input class="key regularKey" type="button" value="["><input class="key regularKey" type="button" value="]"><input class="key regularKey" type="button" value="{"><input class="key regularKey" type="button" value="}"><input class="key regularKey" type="button" value="+"><input class="key regularKey" type="button" value="-"><input class="key regularKey" type="button" value="_"><input class="key regularKey" type="button" value="=">
+                    
+               </div>
+           </section>
+           
        </section>
    </div>
     
     <script type="text/javascript" src="script/stringer.js"></script>
     <script type="text/javascript" src="script/inputBox.js"></script>
     <script type="text/javascript" src="script/keypads.js"></script>
+    <script type="text/javascript" src="script/KeypadObj.js"></script>
+    <script type="text/javascript" src="script/alphaLow.js"></script>
+    <script type="text/javascript" src="script/alphaUpr.js"></script>
+    <script type="text/javascript" src="script/numNSymbol.js"></script>
+    <script type="text/javascript" src="script/init.js"></script>
 </body>
 </html>

@@ -1,7 +1,15 @@
-(function(keypads) {
+(function() {
     
     "use strict";
     
-    window.numNSymbol = stringer.createObjWithPrototype(keypads);
+    let tmp = document.getElementById("numNSymbol");
     
-})(stringer.keypads);
+    var numNSymbol = new stringer.KeypadObj({
+        selectedIndicatorEle: document.getElementById("num"),
+        keypad: tmp,
+        selectedKey: tmp.getElementsByClassName("keySelected")[0]
+    });
+    
+    stringer.keypads.keypadTypes.push(numNSymbol);
+    
+})();
