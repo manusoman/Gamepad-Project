@@ -2,7 +2,7 @@
     
     "use strict";
     
-    stringer.keypads.KTLength = stringer.keypads.keypadTypes.length;
-    stringer.keypads._activeKeypad = stringer.keypads.keypadTypes[0];
+    stringer.keypadManager.KTLength = stringer.keypadManager.keypadTypes.length;
+    stringer.keypadManager._activeKeypad = stringer.keypadManager.keypadTypes[0];
     
 })();

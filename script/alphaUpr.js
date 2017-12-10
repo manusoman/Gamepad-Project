@@ -10,6 +10,6 @@
         selectedKey: tmp.getElementsByClassName("keySelected")[0]
     });
     
-    stringer.keypads.keypadTypes.push(alphaUpr);
+    stringer.keypadManager.keypadTypes.push(alphaUpr);
     
 })();

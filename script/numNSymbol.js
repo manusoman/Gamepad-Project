@@ -10,6 +10,6 @@
         selectedKey: tmp.getElementsByClassName("keySelected")[0]
     });
     
-    stringer.keypads.keypadTypes.push(numNSymbol);
+    stringer.keypadManager.keypadTypes.push(numNSymbol);
     
 })();
