@@ -14,22 +14,28 @@
         
         moveCursor: function(a) {
             this.element.focus();
-            let x = this.element.selectionStart;
-            this.element.setSelectionRange(0, x);
+            let x = this.element.selectionStart + a;
+            x < 0 ? x = 0 : x = x;
+            this.element.setSelectionRange(x, x);
         },
         
-        test: function(x) {
+        backspace: function() {
             this.element.focus();
-            this.element.setSelectionRange(x, x);
+            
+        },
+        
+        test: function() {
+            //this.element.focus();
+            //this.element.setSelectionRange(0, 3);
             
             //console.log(stringer.inputBox.element.selectionStart);
-            //console.log(window.getSelection());
+            console.log(window.getSelection());
         }
     };
     
     
     setTimeout(function() {
-        stringer.inputBox.test(5);
+        stringer.inputBox.test();
     }, 5000);
     
     
