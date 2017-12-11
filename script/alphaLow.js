@@ -7,7 +7,7 @@
     var alphaLow = new stringer.KeypadObj({
         selectedIndicatorEle: document.getElementById("abc"),
         keypad: tmp,
-        selectedKey: tmp.getElementsByClassName("keySelected")[0]
+        currentKey: tmp.getElementsByClassName("keySelected")[0]
     });
     
     stringer.keypadManager.keypadTypes.push(alphaLow);

@@ -6,7 +6,17 @@
         keypadTypes   : [],
         KTLength      : 0,
         selectedIndex : 0,
-        _activeKeypad : {},
+        activeKeypad : {},
+        
+        
+        selectKey: function(o) {
+            this.activeKeypad.selectKey(o);
+        },
+        
+        
+        submitKey: function() {
+            stringer.inputBox.insertChr(this.activeKeypad.currentKey.value);
+        },
         
         
         set keypadSwitch(x) {
@@ -21,13 +31,15 @@
                 this.selectedIndex = 0;
             }
             
-            manageClass("remove", "typeSelected", this._activeKeypad.selectedIndicatorEle);
-            manageClass("remove", "activeKeypad", this._activeKeypad.keypad);
+            stringer.manageClass("remove", "typeSelected", this.activeKeypad.selectedIndicatorEle);
+            stringer.manageClass("remove", "activeKeypad", this.activeKeypad.keypad);
             
-            this._activeKeypad = this.keypadTypes[this.selectedIndex];
+            this.activeKeypad = this.keypadTypes[this.selectedIndex];
             
-            manageClass("add", "typeSelected", this._activeKeypad.selectedIndicatorEle);
-            manageClass("add", "activeKeypad", this._activeKeypad.keypad);
+            stringer.manageClass("add", "typeSelected", this.activeKeypad.selectedIndicatorEle);
+            stringer.manageClass("add", "activeKeypad", this.activeKeypad.keypad);
+            
+            this.selectKey(false);
         }
     };
     
@@ -35,24 +47,6 @@
     // Associated standalone functions...
     
     
-    function manageClass(op, cls, ele) {
-        
-        switch(op) {
-            case "add":
-                if(!(ele.classList.contains(cls))) {
-                    ele.classList.add(cls);
-                }
-                break;
-                
-            case "remove":
-                if(ele.classList.contains(cls)) {
-                    ele.classList.remove(cls);
-                }
-                break;
-                
-            default:
-                console.log("function manageClass: error occured!");
-        }
-    }
+    
     
 })();

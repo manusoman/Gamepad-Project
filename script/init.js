@@ -3,6 +3,6 @@
     "use strict";
     
     stringer.keypadManager.KTLength = stringer.keypadManager.keypadTypes.length;
-    stringer.keypadManager._activeKeypad = stringer.keypadManager.keypadTypes[0];
+    stringer.keypadManager.activeKeypad = stringer.keypadManager.keypadTypes[0];
     
 })();
