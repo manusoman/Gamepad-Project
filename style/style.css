@@ -18,6 +18,16 @@ a {
 	text-decoration: none;
 }
 
+#GPStatus {
+	position: fixed;
+	top: 0px;
+	width: 100%;
+	font-size: 12px;
+	line-height: 30px;
+	text-align: center;
+	color: #808080;
+}
+
 .cover {
 	margin: 100px auto;
 	display: table;

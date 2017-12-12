@@ -5,6 +5,19 @@
     stringer.keypadManager.KTLength = stringer.keypadManager.keypadTypes.length;
     stringer.keypadManager.activeKeypad = stringer.keypadManager.keypadTypes[0];
     
+    
+    window.addEventListener("gamepadconnected", function(e) {
+        stringer.GPInterface.handleGamepad(e, true);
+    });
+    
+    window.addEventListener("gamepaddisconnected", function(e) {
+        stringer.GPInterface.handleGamepad(e, false);
+    });
+    
+    window.addEventListener("gamepadaxismove", function(e){
+       console.log("axis moved!");
+    });
+    
 })();
 
 /*(function() { // Automated Sample
