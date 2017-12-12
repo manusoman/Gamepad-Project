@@ -2,7 +2,6 @@
     
     "use strict";
     
-    
     stringer.KeypadObj = function(x) {
         this.selectedIndicatorEle = x.selectedIndicatorEle;
         this.keypad = x.keypad;
@@ -15,14 +14,12 @@
     
     stringer.KeypadObj.prototype = {
         
-        constructor   : stringer.KeypadObj,
-        
-        
+        constructor   : stringer.KeypadObj,        
         _selectionMap: [1, 4],
         
         selectKey: function(o) {
             
-            stringer.manageClass("remove", "keySelected",this.currentKey);
+            stringer.manageClass("remove", "keySelected", this.currentKey);
             !o ? (o = [this._selectionMap[0], 0]) : (o = o);
 
             let temp1 = this._selectionMap,
@@ -60,7 +57,6 @@
                 };
             }
         }
-        
         
     };   
     

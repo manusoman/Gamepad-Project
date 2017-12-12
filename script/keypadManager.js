@@ -43,10 +43,4 @@
         }
     };
     
-    
-    // Associated standalone functions...
-    
-    
-    
-    
 })();

@@ -1,6 +1,3 @@
-// Functions to be reffered
-// setSelectionRange, setSelectionStart, setSelectionEnd
-
 (function() {
     
     "use strict";
@@ -9,10 +6,19 @@
         element : document.getElementById("inputBox"),
         
         insertChr: function(chr) {
-            this.element.value += chr;
+            
+            this.element.focus();
+            let s = this.element.selectionStart,
+                e = this.element.selectionEnd,
+                ep = s + chr.length;
+            
+            this.element.value = this.element.value.substring(0, s) + chr + this.element.value.substring(e, this.element.value.length);
+            
+            this.element.setSelectionRange(ep, ep);
         },
         
         moveCursor: function(a) {
+            
             this.element.focus();
             let x = this.element.selectionStart + a;
             x < 0 ? x = 0 : x = x;
@@ -20,24 +26,39 @@
         },
         
         backspace: function() {
-            this.element.focus();
             
+            this.element.focus();
+            let e = this.element.selectionEnd,
+                s = e - 1;
+            s < 0 ? s = 0 : s = s;
+            
+            this.element.value = this.element.value.substring(0, s) + this.element.value.substring(e, this.element.value.length);
+            
+            this.element.setSelectionRange(s, s);
         },
         
-        test: function() {
-            //this.element.focus();
-            //this.element.setSelectionRange(0, 3);
+        delete: function() {
             
-            //console.log(stringer.inputBox.element.selectionStart);
-            console.log(window.getSelection());
+            this.element.focus();
+            let l = this.element.value.length,
+                s = this.element.selectionStart,
+                e = s + 1;
+            e > l ? e = l : e = e;
+            
+            this.element.value = this.element.value.substring(0, s) + this.element.value.substring(e, l);
+            
+            this.element.setSelectionRange(s, s);
         }
+        
     };
     
     
-    setTimeout(function() {
-        stringer.inputBox.test();
-    }, 5000);
-    
+    /*setTimeout(function() {
+        stringer.inputBox.moveCursor(-3);
+        setTimeout(function() {
+            stringer.inputBox.delete();
+        }, 2000);
+    }, 5000);   */ 
     
     
 })();
