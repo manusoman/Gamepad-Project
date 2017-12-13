@@ -20,12 +20,19 @@ a {
 
 #GPStatus {
 	position: fixed;
+	left: 0px;
+	right: 0px;
+	margin: 10px auto;
+	height: 26px;
+	transition: top 0.3s;
+}
+
+#GPStatus.on {
 	top: 0px;
-	width: 100%;
-	font-size: 12px;
-	line-height: 30px;
-	text-align: center;
-	color: #808080;
+}
+
+#GPStatus.off {
+	top: -46px;
 }
 
 .cover {
