@@ -14,9 +14,7 @@
        <section class="input"><input type="text" id="inputBox" autofocus placeholder="Enter Text..."></section>
       <section class="keypad">
           
-           <section class="keypadTypes">
-               <a href="" id="abc" class="type typeLeft typeSelected">abc,.</a><a href="" id="ABC" class="type">ABC,.</a><a href="" id="num" class="type typeRight">!?123</a>
-           </section>
+           
            
             <section id="alphaLow" class="keypadCover activeKeypad">
                <div class="keyRow">
@@ -57,7 +55,7 @@
             <section id="numNSymbol" class="keypadCover">
                <div class="keyRow">
                   
-                  <input class="key regularKey" type="button" value="!"><input class="key regularKey" type="button" value="@"><input class="key regularKey" type="button" value="#"><input class="key regularKey" type="button" value="$"><input class="key regularKey" type="button" value="%"><input class="key regularKey" type="button" value="^"><input class="key regularKey" type="button" value="&"><input class="key regularKey" type="button" value="*"><input class="key regularKey" type="button" value="("><input class="key regularKey" type="button" value=")">
+                  <input class="key regularKey" type="button" value="?"><input class="key regularKey" type="button" value="!"><input class="key regularKey" type="button" value="@"><input class="key regularKey" type="button" value="#"><input class="key regularKey" type="button" value="$"><input class="key regularKey" type="button" value="%"><input class="key regularKey" type="button" value="^"><input class="key regularKey" type="button" value="&"><input class="key regularKey" type="button" value="*"><input class="key regularKey" type="button" value="_">
                    
                </div>
                 <div class="keyRow">
@@ -67,12 +65,24 @@
                </div>
                 <div class="keyRow">
                   
-                  <input class="key regularKey" type="button" value="`"><input class="key regularKey" type="button" value="~"><input class="key regularKey" type="button" value="["><input class="key regularKey" type="button" value="]"><input class="key regularKey" type="button" value="{"><input class="key regularKey" type="button" value="}"><input class="key regularKey" type="button" value="+"><input class="key regularKey" type="button" value="-"><input class="key regularKey" type="button" value="_"><input class="key regularKey" type="button" value="=">
+                  <input class="key regularKey" type="button" value="`"><input class="key regularKey" type="button" value="~"><input class="key regularKey" type="button" value="["><input class="key regularKey" type="button" value="]"><input class="key regularKey" type="button" value="("><input class="key regularKey" type="button" value=")"><input class="key regularKey" type="button" value="+"><input class="key regularKey" type="button" value="-"><input class="key regularKey" type="button" value="_"><input class="key regularKey" type="button" value="=">
                     
                </div>
            </section>
            
+           <section class="keypadTypes">
+               <a href="" id="abc" class="type typeSelected">abc,.</a>
+               <a href="" id="ABC" class="type">ABC,.</a>
+               <a href="" id="num" class="type">!?123</a>
+           </section>
+           
        </section>
+   </div>
+   
+   <div id="lightBox">
+       <div>
+           <p id="sbmTxt">Lorem Ipsum is a dummy text!</p>
+       </div>
    </div>
     
     <script type="text/javascript" src="script/stringer.js"></script>

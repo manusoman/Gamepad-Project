@@ -19,6 +19,11 @@
         },
         
         
+        spacer: function() {
+            stringer.inputBox.insertChr(" ");
+        },
+        
+        
         set keypadSwitch(x) {
             
             this.selectedIndex += x;

@@ -3,7 +3,10 @@
     "use strict";
     
     stringer.inputBox = {
-        element : document.getElementById("inputBox"),
+        
+        element: document.getElementById("inputBox"),
+        LB: document.getElementById("lightBox"),
+        LBTxt: document.getElementById("sbmTxt"),
         
         insertChr: function(chr) {
             
@@ -48,17 +51,21 @@
             this.element.value = this.element.value.substring(0, s) + this.element.value.substring(e, l);
             
             this.element.setSelectionRange(s, s);
+        },
+        
+        submitString: function(opt) {
+            
+            if(opt) {
+                this.LBTxt.innerHTML = this.element.value;
+                this.element.value = "";
+                stringer.manageClass("add", "active", this.LB);
+            } else {
+                stringer.manageClass("remove", "active", this.LB);
+                this.element.focus();
+            }
         }
         
     };
-    
-    
-    /*setTimeout(function() {
-        stringer.inputBox.moveCursor(-3);
-        setTimeout(function() {
-            stringer.inputBox.delete();
-        }, 2000);
-    }, 5000);   */ 
     
     
 })();
