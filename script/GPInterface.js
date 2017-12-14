@@ -6,18 +6,12 @@
     function Axis() {
         
         this.h = {
-            pressed: false,
-            held: false,
             timeStamp: 0,
-            //duration: 0,
             value: 0
         };
         
         this.v = {
-            pressed: false,
-            held: false,
             timeStamp: 0,
-            //duration: 0,
             value: 0
         };
     }
@@ -28,7 +22,7 @@
         constructor: Axis,
         
         AT: 0.5, // AT -> axis threshold
-        HT: 500, // HT -> button held threshold
+        HT: 500, // HT -> button hold threshold
         
         setAxisStatus: function(vals) {
             
@@ -38,29 +32,19 @@
                     av = vals[i],             // av -> axis value 
                     tmp;
 
-                tmp = (av >= this.AT) ? 1 : 0;
-                tmp = (av <= -this.AT) ? -1 : 0;
+                tmp = (av >= this.AT) ? 1 : ((av <= -this.AT) ? -1 : 0);
 
                 if(tmp) {
 
-                    if(a.pressed) {
-                        //a.duration = Date.now() - a.timeStamp;
-                        a.held = (Date.now() - a.timeStamp) >= this.HT ? true : false;
+                    if(a.value) {
+                        a.value = (Date.now() - a.timeStamp) >= this.HT ? tmp : 0;
                     } else {
-                        a.pressed = true;
-                        a.timeStamp = Date.now();
                         a.value = tmp;
                     }
 
                 } else {
-
-                    if(a.pressed) {
-                        a.pressed = false;
-                        a.held = false;
-                        a.timeStamp = 0;
-                        //a.duration = 0;
-                        a.value = 0;
-                    }            
+                    a.timeStamp = 0;
+                    a.value = 0;
                 }
             }
         }
@@ -84,8 +68,7 @@
         },
         
         operateKeypad: function() {
-            let x = this.axisL.h.value;
-            stringer.keypadManager.keypadSwitch = 
+            stringer.keypadManager.keypadSwitch = this.axisL.h.value;
         },
         
         handleGamepad: function(e, isConnected) {            

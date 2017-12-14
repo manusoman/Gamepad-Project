@@ -20,7 +20,7 @@
         selectKey: function(o) {
             
             stringer.manageClass("remove", "keySelected", this.currentKey);
-            !o ? (o = [this._selectionMap[0], 0]) : (o = o);
+            o = !o ? [this._selectionMap[0], 0] : o;
 
             let temp1 = this._selectionMap,
                 temp2 = temp1[1] + o[1];

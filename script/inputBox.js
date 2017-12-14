@@ -21,7 +21,7 @@
             
             this.element.focus();
             let x = this.element.selectionStart + a;
-            x < 0 ? x = 0 : x = x;
+            x = x < 0 ? 0 : x;
             this.element.setSelectionRange(x, x);
         },
         
@@ -30,7 +30,7 @@
             this.element.focus();
             let e = this.element.selectionEnd,
                 s = e - 1;
-            s < 0 ? s = 0 : s = s;
+            s = s < 0 ? 0 : s;
             
             this.element.value = this.element.value.substring(0, s) + this.element.value.substring(e, this.element.value.length);
             
@@ -43,7 +43,7 @@
             let l = this.element.value.length,
                 s = this.element.selectionStart,
                 e = s + 1;
-            e > l ? e = l : e = e;
+            e = e > l ? l : e;
             
             this.element.value = this.element.value.substring(0, s) + this.element.value.substring(e, l);
             
