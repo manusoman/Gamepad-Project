@@ -7,6 +7,7 @@
         element: document.getElementById("inputBox"),
         LB: document.getElementById("lightBox"),
         LBTxt: document.getElementById("sbmTxt"),
+        LBEnable: false,
         
         insertChr: function(chr) {
             
@@ -53,15 +54,17 @@
             this.element.setSelectionRange(s, s);
         },
         
-        submitString: function(opt) {
+        submitString: function() {
             
-            if(opt) {
+            if(this.LBEnable) {
+                stringer.manageClass("remove", "active", this.LB);
+                this.LBEnable = false;
+                this.element.focus();
+            } else {
                 this.LBTxt.innerHTML = this.element.value;
                 this.element.value = "";
                 stringer.manageClass("add", "active", this.LB);
-            } else {
-                stringer.manageClass("remove", "active", this.LB);
-                this.element.focus();
+                this.LBEnable = true;
             }
         }
         

@@ -28,12 +28,10 @@
             
             this.selectedIndex += x;
             
-            if(this.selectedIndex > (this.KTLength - 1)) {
-                this.selectedIndex = (this.KTLength - 1);
-            }
-            
             if(this.selectedIndex < 0) {
                 this.selectedIndex = 0;
+            } else if(this.selectedIndex > (this.KTLength - 1)) {
+                this.selectedIndex = (this.KTLength - 1);
             }
             
             stringer.manageClass("remove", "typeSelected", this.activeKeypad.selectedIndicatorEle);

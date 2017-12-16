@@ -38,12 +38,13 @@
         
         constructor: Axis,
         
-        AT: 0.5, // AT -> axis threshold
+        AT: 0.7, // AT -> axis threshold
         HT: 500, // HT -> button hold threshold
         
-        setAxisStatus: function(vals) {
+        setAxisStatus: function(vals) {            
+            let i = 2;
             
-            for(let i = 0; i < 2; i++) {
+            while(i--) {
                 
                 let a  = [this.h, this.v][i], // a -> axis
                     av = vals[i],             // av -> axis value 
@@ -113,8 +114,7 @@
         buttonS : new Button(),
         buttonML : new Button(),
         buttonMR : new Button(),
-        buttonLBE : new Button(), // Button LightBox Enable
-        buttonLBD : new Button(), // Button LightBox Disable
+        buttonLB : new Button(), // Button LightBox
         
         getGPBStatus: function() {
             
@@ -124,11 +124,9 @@
             this.buttonS.setButtonStatus(this.GP.buttons[7].pressed);
             this.buttonML.setButtonStatus(this.GP.buttons[14].pressed);
             this.buttonMR.setButtonStatus(this.GP.buttons[15].pressed);
-            this.buttonLBE.setButtonStatus(this.GP.buttons[0].pressed);
-            this.buttonLBD.setButtonStatus(this.GP.buttons[1].pressed);
+            this.buttonLB.setButtonStatus(this.GP.buttons[0].pressed);
             
-            this.operateKeypad();
-            
+            this.operateKeypad();            
         },
         
         operateKeypad: function() {
@@ -140,28 +138,12 @@
             if(this.axisL.h.value === -1) stringer.inputBox.backspace();
             if(this.buttonML.pressed) stringer.inputBox.moveCursor(-1);
             if(this.buttonMR.pressed) stringer.inputBox.moveCursor(1);
-            if(this.buttonLBE.pressed) stringer.inputBox.submitString(true);
-            if(this.buttonLBD.pressed) stringer.inputBox.submitString(false);
+            if(this.buttonLB.pressed) stringer.inputBox.submitString();
             
-            /*if(this.axisL.h.value) stringer.keypadManager.keypadSwitch = this.axisL.h.value;
-            stringer.keypadManager.selectKey([this.axisL.v.actualValue + 1, this.axisR.h.value]);
-            if(this.buttonS.pressed) stringer.keypadManager.submitKey();
-            if(this.axisR.v.value === -1) stringer.keypadManager.spacer();
-            if(this.axisR.v.value === 1) stringer.inputBox.backspace();*/
-            
-            
-            
-            /*let a = this.GP.buttons;
-            for(let i = 0, l = a.length; i < l; i++) {
-                if(a[i].pressed) {
-                   console.log(i);
-                }
-            }*/
         },
         
         handleGamepad: function(e, isConnected) {            
-            this.GP = isConnected ? e.gamepad : false;            
-            console.log(this.GP);
+            this.GP = isConnected ? e.gamepad : false;
         }
     };
     

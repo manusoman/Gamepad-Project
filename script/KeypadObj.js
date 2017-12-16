@@ -25,12 +25,10 @@
             let temp1 = this._selectionMap,
                 temp2 = temp1[1] + o[1];
 
-            if(temp2 > this.keyMap[o[0]].len - 1) {
-                temp2 = this.keyMap[o[0]].len - 1;
-            }
-
             if(temp2 < 0) {
                 temp2 = 0;
+            } else if(temp2 > this.keyMap[o[0]].len - 1) {
+                temp2 = this.keyMap[o[0]].len - 1;
             }
 
             this._selectionMap[0] = o[0];
